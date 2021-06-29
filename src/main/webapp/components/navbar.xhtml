@@ -242,6 +242,16 @@
 									userBean.userRealName : userBean.userEmail} <span class="caret"></span>
 								</a>
 								<ul id="userPanel" class="dropdown-menu">
+									<li style="padding-top: 4px;">
+										<i class="fa fa-envelope-open-o" /> Notification Settings
+									</li>
+									<c:if test="#{userBean.biobankOwner}">
+										<li>
+											<h:link outcome="/owner/representiveList">
+											<i class="fa fa-id-card-o" /> Representative of my Biobanks/Collections
+											</h:link>
+										</li>
+									</c:if>
 									<li>
 										<h:commandLink action="#{userBean.logout}">
 											<i class="fa fa-sign-out" /> #{label['queryview.logout']}
